@@ -40,7 +40,7 @@ export default function MyOrderDetail({ params }: OrderProps) {
         </thead>
         <tbody>
           {order?.items.map((item) => (
-            <tr>
+            <tr key={item.id}>
               <td>{item.product.name}</td>
               <td>
                 <img src={item.product.image} width={150} height={"auto"} />

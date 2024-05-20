@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Next.js: Node",
+        "type": "node",
+        "request": "attach",
+        "remoteRoot": "/src",
+        "localRoot": "${workspaceFolder}",
+        "port": 9229,
+        "restart": true,
+        "address": "0.0.0.0",
+        "skipFiles": ["<node_internals>/**"]
+      },
+      {
+        "name": "Next.js: Chrome",
+        "type": "node",
+        "request": "attach",
+        "remoteRoot": "/src",
+        "localRoot": "${workspaceFolder}",
+        "port": 9230,
+        "restart": true,
+        "address": "0.0.0.0",
+        "skipFiles": ["<node_internals>/**"]
+      }
+    ],
+    "compounds": [
+      {
+        "name": "Next.js: Fullstack",
+        "configurations": ["Next.js: Node", "Next.js: Chrome"]
+      }
+    ]
+  }

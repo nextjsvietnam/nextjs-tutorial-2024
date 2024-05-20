@@ -1,4 +1,7 @@
+import { SlowComponent } from "@/components/SlowComponent";
 import Link from "next/link";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export default function Home() {
   return (
@@ -24,10 +27,10 @@ export default function Home() {
           <a href="/my-account">My Account</a>
         </li>
         <li>
-          <a href="/my-orders">My orders</a>
+          <a href="/my-account/orders">My orders</a>
         </li>
         <li>
-          <a href="/my-orders/1">My order detail</a>
+          <a href="/my-account/orders/1">My order detail</a>
         </li>
       </ul>
       <p>Links to other pages with Link tag</p>
@@ -36,6 +39,10 @@ export default function Home() {
           <Link href="/products">Products</Link>
         </li>
       </ul>
+      <h2>Slow Component</h2>
+      <Suspense fallback={<Loading />}>
+        <SlowComponent></SlowComponent>
+      </Suspense>
     </main>
   );
 }

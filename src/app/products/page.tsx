@@ -1,6 +1,10 @@
+import { runUserGuard } from "@/shared/auth";
 import Link from "next/link";
 
 export default function Products() {
+  // check login status
+  runUserGuard();
+
   return (
     <main className="container-xl mx-auto p-4">
       <h1>Products</h1>
